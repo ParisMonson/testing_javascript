@@ -16,7 +16,10 @@ const candies = [
 
 const searchCandies = (searchString, maximumPrice) => {
   let result = candies.filter((candy) => {
-    if (candy.name.startsWith(searchString) && candy.price < maximumPrice) {
+    if (
+      candy.name.startsWith(capitalize(searchString)) &&
+      candy.price < maximumPrice
+    ) {
       return true;
     }
   });
@@ -24,6 +27,14 @@ const searchCandies = (searchString, maximumPrice) => {
     return item.name;
   });
   return finalArray;
+};
+
+const capitalize = (str) => {
+  if (typeof str === "string") {
+    return str.replace(/^\w/, (c) => c.toUpperCase());
+  } else {
+    return "";
+  }
 };
 
 module.exports = searchCandies;

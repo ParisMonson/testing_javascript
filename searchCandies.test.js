@@ -17,4 +17,7 @@ describe("searchCandies", () => {
   it("searches for a candy starting with S with a maximum price of 4", () => {
     expect(searchCandies("S", 4)).toStrictEqual(["Skitties", "Skittles"]);
   });
+  it("searches for a candy starting with s with a maximum price of 4", () => {
+    expect(searchCandies("s", 4)).toStrictEqual(["Skitties", "Skittles"]);
+  });
 });
